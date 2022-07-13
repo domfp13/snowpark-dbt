@@ -1,0 +1,7 @@
+.DS_Store
+.idea
+LOCAL.md
+dbt-transformations/dbt-formatter/
+dbt-transformations/dbt_packages/
+dbt-transformations/logs/
+dbt-transformations/target/
