@@ -16,8 +16,8 @@ services:
     tty: true
     restart: on-failure:3
     volumes:
-      - ./dbt-transformations:/usr/src/app
-      - ./dbt-transformations/profiles.yml:/root/.dbt/profiles.yml
+      - ./transformations:/usr/src/app
+      - ./transformations/profiles.yml:/root/.dbt/profiles.yml
 
   # dbt docs
   dbt-docs:
@@ -34,6 +34,6 @@ services:
       - "8001:8001"
     restart: on-failure:3
     volumes:
-      - ./dbt-transformations:/usr/src/app
-      - ./dbt-transformations/profiles.yml:/root/.dbt/profiles.yml
+      - ./transformations:/usr/src/app
+      - ./transformations/profiles.yml:/root/.dbt/profiles.yml
     command: /bin/bash -c "dbt deps && dbt docs generate && dbt docs serve --port 8001"

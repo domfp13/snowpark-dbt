@@ -1,7 +1,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'aws_eu_central'
+name: 'transformations'
 version: '1.0.0'
 config-version: 2
 
@@ -29,8 +29,17 @@ clean-targets:         # directories to be removed by `dbt clean`
 # In this example config, we tell dbt to build all models in the example/ directory
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
+models:
+  transformations:
+    +snowflake_warehouse: "SMALL"
+    stg:
+      +schema: stg
+      +tags: "stg"
+      +materialized: table
+      +transient: true
+
 seeds:
-  aws_eu_central:
+  transformations:
     +snowflake_warehouse: "XSMALL"
     raw:
       +schema: raw
@@ -41,12 +50,3 @@ seeds:
           country_id: integer
           market_region_name: varchar(30)
           sys_update_ts: timestamp
-
-models:
-  aws_eu_central:
-    +snowflake_warehouse: "SMALL"
-    stg:
-      +schema: stg
-      +tags: "stg"
-      +materialized: table
-      +transient: true
