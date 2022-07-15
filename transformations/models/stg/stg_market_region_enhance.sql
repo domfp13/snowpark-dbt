@@ -1,8 +1,8 @@
 {{
     config(
         pre_hook = [
-            "DROP TABLE IF EXISTS EDW_DEV.STG.STG_MARKET_REGION_ENHANCE;",
-            "CALL EDW_DEV.STG.REPLICATE_LIMIT('EDW_DEV.STG.STG_MARKET_REGION', 'EDW_DEV.STG.STG_MARKET_REGION_ENHANCE', 50);"
+            "DROP TABLE IF EXISTS {{ this }};",
+            "CALL EDW_DEV.STG.REPLICATE_LIMIT('{{ ref('stg_market_region') }}', '{{ this }}', 50);"
         ]
     )
 }}
