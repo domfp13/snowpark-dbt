@@ -1,6 +1,15 @@
+# Created By Enrique Plata
+
 SHELL = /bin/bash
 
+include .env
+
 .DEFAULT_GOAL := help
+
+checker:
+     $(if $(ACCOUNT),,$(error Must set variable ACCOUNT)) \
+     $(if $(DATABASE_USERNAME),,$(error Must set variable DATABASE_USERNAME)) \
+     $(if $(DATABASE_PASSWORD),,$(error Must set variable DATABASE_PASSWORD))
 
 .PHONY: start
 start: ## 1.-Use docker-compose to create container

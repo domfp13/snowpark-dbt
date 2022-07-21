@@ -1,8 +1,8 @@
 # Snowflake Snowpark (python) - dbt
 
 This project is trying to demonstrate the integration between Snowflake Snowpark and dbt,
-the transformations here presented are quite simple but the principles will be the same
-in. This project is running dbt and Snowpark directly without the need of an external library or wrapper.
+the transformations here presented are quite simple set a foundational 
+. This project is running dbt and Snowpark directly without the need of an external library or wrapper.
 
 ## Requirements
 
@@ -16,11 +16,13 @@ in. This project is running dbt and Snowpark directly without the need of an ext
 
 * Create resources: database, warehouse, etc.
   * Run the scrip under `sql/env-setup.sql` in your snowflake account.
-* Change the file `.env` you need to provide the following valid parameters:
-  * ACCOUNT (**WITHOUT** https and snowflakecomputing.com/... **ONLY** account name) 
-  * DATABASE_USERNAME 
+* Change the file `.env` you need to provide the following valid parameters and replace: {ADD}:
+  * ACCOUNT (**WITHOUT** https and snowflakecomputing.com/... **ONLY** account locator) 
+  * DATABASE_USERNAME
   * DATABASE_PASSWORD
-* Open up a terminal and navigate to the repository location where you clone this repo (`cd ~/.../snowflake-dbt`)  
+  * Note: To get your account identifier please check out this [link](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html).
+* Start Docker
+* Open up a terminal and navigate to the location where you cloned this repository (`cd ~/.../snowflake-dbt`)
 * Once you are in the repository run the following command: `make start`
   * This will create two Docker containers: 
     * One for the dbt Webserver (Lineage visualization in dbt) 
