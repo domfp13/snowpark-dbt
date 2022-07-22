@@ -1,7 +1,6 @@
 .DS_Store
 .idea
 LOCAL.md
-transformations/dbt-formatter/
 transformations/dbt_packages/
 transformations/logs/
 transformations/target/

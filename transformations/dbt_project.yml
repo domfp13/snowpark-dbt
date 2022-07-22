@@ -29,24 +29,48 @@ clean-targets:         # directories to be removed by `dbt clean`
 # In this example config, we tell dbt to build all models in the example/ directory
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
-models:
-  transformations:
-    +snowflake_warehouse: "SMALL"
-    stg:
-      +schema: stg
-      +tags: "stg"
-      +materialized: table
-      +transient: true
-
 seeds:
   transformations:
-    +snowflake_warehouse: "XSMALL"
+    +snowflake_warehouse: "SMALL"
     raw:
-      +schema: raw
-      +tags: "raw"
+      +schema: RAW
+      +tags: "RAW"
       raw_market_region:
         +columns_types:
-          country_market_region_id: integer
-          country_id: integer
-          market_region_name: varchar(30)
-          sys_update_ts: timestamp
+          country_market_region_id: INTEGER
+          country_id: INTEGER
+          market_region_name: VARCHAR
+          sys_update_ts: TIMESTAMP
+      raw_credits:
+        +columns_types:
+          person_id: VARCHAR
+          id: VARCHAR
+          name: VARCHAR
+          character: VARCHAR
+          role: VARCHAR
+      raw_titles:
+        +columns_types:
+          id: VARCHAR
+          title: VARCHAR
+          type: VARCHAR
+          description: VARCHAR
+          release_year: VARCHAR
+          age_certification: VARCHAR
+          runtime: VARCHAR
+          genres: VARCHAR
+          production_countries: VARCHAR
+          seasons: VARCHAR
+          imdb_id: VARCHAR
+          imdb_score: VARCHAR
+          imdb_votes: VARCHAR
+          tmdb_popularity: VARCHAR
+          tmdb_score: VARCHAR
+
+models:
+  transformations:
+    +snowflake_warehouse: "XSMALL"
+    stg:
+      +schema: STG
+      +tags: "STG"
+      +materialized: table
+      +transient: true
