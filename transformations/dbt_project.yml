@@ -50,21 +50,21 @@ seeds:
           role: VARCHAR
       raw_titles:
         +columns_types:
-          id: VARCHAR
-          title: VARCHAR
-          type: VARCHAR
-          description: VARCHAR
-          release_year: VARCHAR
-          age_certification: VARCHAR
-          runtime: VARCHAR
-          genres: VARCHAR
-          production_countries: VARCHAR
-          seasons: VARCHAR
-          imdb_id: VARCHAR
-          imdb_score: VARCHAR
-          imdb_votes: VARCHAR
-          tmdb_popularity: VARCHAR
-          tmdb_score: VARCHAR
+          id: VARCHAR(200)
+          title: VARCHAR(200)
+          type: VARCHAR(200)
+          description: VARCHAR(1800)
+          release_year: VARCHAR(200)
+          age_certification: VARCHAR(200)
+          runtime: VARCHAR(200)
+          genres: VARCHAR(200)
+          production_countries: VARCHAR(200)
+          seasons: VARCHAR(200)
+          imdb_id: VARCHAR(200)
+          imdb_score: VARCHAR(200)
+          imdb_votes: VARCHAR(200)
+          tmdb_popularity: VARCHAR(200)
+          tmdb_score: VARCHAR(200)
 
 models:
   transformations:
