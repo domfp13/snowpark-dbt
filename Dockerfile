@@ -1,4 +1,4 @@
-FROM python:3.8
+FROM python:3.9
 
 ENV APP_HOME /usr/src/app
 ENV PYTHONDONTWRITEBYTECODE 1
