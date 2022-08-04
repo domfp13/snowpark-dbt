@@ -42,6 +42,12 @@ This project is made for UNIX based systems, it is possible to also run it on Wi
   * `make clean`
   * This will remove all the containers, the container network, etc.
 
+## dbt models
+<img width="1705" alt="image" src="https://user-images.githubusercontent.com/107192982/182833850-5d4285cf-f7be-42b1-a488-a6c68ecf4bc1.png">
+
+Once you have up and running the code head over to: `http://localhost:8001/#!/overview?g_v=1` the model called 
+`stg_market_region_enhance` (highlighted in the picture above) is the snowpark model being orchestrated by dbt.
+
 ## Usage
 
 You can use this as a local demo, no dbt cloud is required.
